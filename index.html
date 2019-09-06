@@ -12,6 +12,90 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Resume Clips</h1>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="#">Resume Clips</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item dropdown login">
+                <a class="nav-link dropdown-toggle" href="#" id="signInDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Sign In
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <form id="sign-in" class="px-4 py-3 ">
+                    <fieldset>
+                      <legend>Sign In!</legend>
+                      <div class="form-group">
+                        <input type="email"  class="form-control" name="credentials[email]" placeholder="Email">
+                      </div>
+                      <div class="form-group">
+                        <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+                      </div>
+                      <input type="submit" value="Sign In!">
+                    </fieldset>
+                  </form>
+                </div>
+              </li>
+              <li class="nav-item dropdown login">
+                <a class="nav-link dropdown-toggle" href="#" id="signUpDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Sign Up
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <form id="sign-up" class="px-4 py-3">
+                    <div class="form-group">
+                      <label>Email address</label>
+                      <input type="email" class="form-control" name="credentials[email]" placeholder="email@example.com">
+                    </div>
+                    <div class="form-group">
+                      <label>Password</label>
+                      <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                      <label>Confirm Password</label>
+                      <input type="password" class="form-control" name="credentials[password_confirmation]" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                  </form>
+                </div>
+              </li>
+              <li>
+                <button class="btn btn-outline-success my-2 my-sm-0 on-auth hidden" id="sign-out">Sign Out</button>
+              </li>
+              <li class="nav-item dropdown on-auth hidden">
+                <a class="nav-link dropdown-toggle" href="#" id="signUpDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Change Password
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <form id="change-password" class="px-4 py-3">
+                    <div class="form-group">
+                      <label>Current Password</label>
+                      <input type="password" class="form-control" name="passwords[old]" placeholder="Current Password">
+                    </div>
+                    <div class="form-group">
+                      <label>New Password</label>
+                      <input type="password" class="form-control" name="passwords[new]" placeholder="New Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Change Password</button>
+                  </form>
+                </div>
+              </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+              <li>
+                <div>
+                  <div id="message" class="navbar-text"></div>
+                </div>
+              </li>
+              <li>
+                <div id="user-info" class="on-auth hidden">
+                  <div id="signed-in-user"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
     </body>
 </html>
