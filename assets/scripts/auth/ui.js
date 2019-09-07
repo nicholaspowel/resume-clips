@@ -1,5 +1,6 @@
 'use strict'
 const store = require('./../store.js')
+const clipsFormTemplate = require('../templates/clips-form.handlebars')
 
 const success = (message = '') => {
 // does this need anything passed in?
@@ -23,10 +24,11 @@ const signUpSuccess = () => {
 const signInSuccess = (data) => {
 // handle storing token, if it exists
   store.user = data.user
-  store.clickCounter = 0
   $('#signed-in-user').text('User:' + store.user.email)
   $('#on-auth, .login, .on-auth').toggleClass('hidden') // fix this to use invisible where appropriate
   success(' You signed in!')
+  const clipsFormHtml = clipsFormTemplate()
+  $('.content').html(clipsFormHtml)
   return 'signin' // passes signin to the next function for calling onIndex
 }
 
