@@ -11,9 +11,18 @@ const onSaveBook = (event) => {
     .then(ui.createSuccess)
     .catch(ui.failure)
 }
+const onGetClips = (event) => {
+  // if (event) {
+  event.preventDefault()
+  // }
+  api.indexClips()
+    .then(ui.getClipsSuccess)
+    .catch(ui.failure)
+}
 
 const addHandlers = () => {
   $('.content').on('submit', '#save-clip', onSaveBook)
+  $('#getClipsButton').on('click', onGetClips)
 }
 
 module.exports = {

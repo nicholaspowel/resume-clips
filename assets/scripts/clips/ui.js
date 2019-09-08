@@ -1,4 +1,5 @@
 'use strict'
+const showClipsTemplate = require('../templates/clip-listing.handlebars')
 
 const createSuccess = (data) => {
   console.log('created successfully!', data)
@@ -11,7 +12,9 @@ const showSuccess = (data) => {
   $('form').trigger('reset')
 }
 
-const indexSuccess = (data) => {
+const getClipsSuccess = (data) => {
+  const showClipsHtml = showClipsTemplate({ clips: data.clips })
+  $('.resume-clips').html(showClipsHtml)
   $('form').trigger('reset')
 }
 
@@ -22,6 +25,6 @@ const updateSuccess = (data) => {
 module.exports = {
   createSuccess,
   showSuccess,
-  indexSuccess,
+  getClipsSuccess,
   updateSuccess
 }
