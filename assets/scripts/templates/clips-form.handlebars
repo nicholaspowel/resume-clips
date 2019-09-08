@@ -1,18 +1,18 @@
-<form>
+<form id="save-clip">
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputTitle">Institute</label>
-      <input type="text" class="form-control" id="inputTitle" placeholder="ex: General Assembly">
+      <input name="clip[title]" type="text" class="form-control" id="inputTitle" placeholder="ex: General Assembly">
     </div>
     <div class="form-group col-md-6">
       <label for="inputPostition">Position</label>
-      <input type="text" class="form-control" id="inputPostition" placeholder="ex: Software Engineering Fellow">
+      <input name="clip[position]" type="text" class="form-control" id="inputPostition" placeholder="ex: Software Engineering Fellow">
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputCategory">Category</label>
-      <select multiple class="form-control" id="inputCategory">
+      <select multiple class="form-control" name="clip[category]" id="inputCategory">
         <option>Education</option>
         <option>Work</option>
         <option>Experience</option>
@@ -23,21 +23,21 @@
   </div>
   <div class="form-group">
     <label for="inputLocation">Location</label>
-    <input type="text" class="form-control" id="inputLocation" placeholder="ex: Boston, MA or Paris, France">
+    <input name="clip[location]" type="text" class="form-control" id="inputLocation" placeholder="ex: Boston, MA or Paris, France">
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputStartDate">Start Date</label>
-      <input type="date" class="form-control" id="inputStartDate">
+      <input name="clip[start_time]" type="date" class="form-control" id="inputStartDate">
     </div>
     <div class="form-group col-md-6">
       <label for="inputEndDate">End Date</label>
-      <input type="Date" class="form-control" id="inputEndDate">
+      <input name="clip[end_time]" type="Date" class="form-control" id="inputEndDate">
     </div>
   </div>
   <div class="form-group">
     <label for="inputDescription">Description</label>
-    <textarea class="form-control" id="inputDescription" rows="5"></textarea>
+    <textarea name="clip[description]" class="form-control" id="inputDescription" rows="5"></textarea>
   </div>
 <!-- refactor later to make this form useable to updating exisiting clips -->
   <button type="submit" class="btn btn-primary save-btn">Save</button>
