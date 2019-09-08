@@ -1,46 +1,44 @@
 <form>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputEmail4">Institute</label>
-      <input type="text" class="form-control" id="inputEmail4" placeholder="Email">
+      <label for="inputTitle">Institute</label>
+      <input type="text" class="form-control" id="inputTitle" placeholder="ex: General Assembly">
     </div>
     <div class="form-group col-md-6">
-      <label for="inputPassword4">Password</label>
-      <input type="text" class="form-control" id="inputPassword4" placeholder="Password">
+      <label for="inputPostition">Position</label>
+      <input type="text" class="form-control" id="inputPostition" placeholder="ex: Software Engineering Fellow">
     </div>
-  </div>
-  <div class="form-group">
-    <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-  </div>
-  <div class="form-group">
-    <label for="inputAddress2"></label>
-    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputCity">City</label>
-      <input type="text" class="form-control" id="inputCity">
-    </div>
-    <div class="form-group col-md-4">
-      <label for="inputState">State</label>
-      <select id="inputState" class="form-control">
-        <option selected>Choose...</option>
-        <option>...</option>
+      <label for="inputCategory">Category</label>
+      <select multiple class="form-control" id="inputCategory">
+        <option>Education</option>
+        <option>Work</option>
+        <option>Experience</option>
+        <option>Projects</option>
+        <option>Other</option>
       </select>
-    </div>
-    <div class="form-group col-md-2">
-      <label for="inputZip">Zip</label>
-      <input type="text" class="form-control" id="inputZip">
     </div>
   </div>
   <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
+    <label for="inputLocation">Location</label>
+    <input type="text" class="form-control" id="inputLocation" placeholder="ex: Boston, MA or Paris, France">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputStartDate">Start Date</label>
+      <input type="date" class="form-control" id="inputStartDate">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputEndDate">End Date</label>
+      <input type="Date" class="form-control" id="inputEndDate">
     </div>
   </div>
-  <button type="submit" class="btn btn-primary">Save</button>
+  <div class="form-group">
+    <label for="inputDescription">Description</label>
+    <textarea class="form-control" id="inputDescription" rows="5"></textarea>
+  </div>
+<!-- refactor later to make this form useable to updating exisiting clips -->
+  <button type="submit" class="btn btn-primary save-btn">Save</button>
 </form>
