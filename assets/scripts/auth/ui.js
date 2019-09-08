@@ -44,6 +44,7 @@ const signOutSuccess = () => {
   success('Signed Out!')
   $('#on-auth, .login, .on-auth').toggleClass('hidden')
   $('#signed-in-user').text('')
+  $('.resume-clips').empty()
 }
 
 module.exports = {

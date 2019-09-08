@@ -1,6 +1,7 @@
 'use strict'
 const api = require('./api.js')
 const ui = require('./ui.js')
+const clipsEvents = require('./../clips/events.js')
 const getFormFields = require('./../../../lib/get-form-fields.js')
 
 // event handler for sign-up form
@@ -12,9 +13,6 @@ const onSignUp = (event) => {
   api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.failure)
-  // handle success
-
-  // handle failure
 }
 
 const onSignIn = (event) => {
@@ -22,6 +20,7 @@ const onSignIn = (event) => {
   const data = getFormFields(event.target)
   api.signIn(data)
     .then(ui.signInSuccess)
+    .then(clipsEvents.onGetClips) // Loads up the users clips so they are visible immediately
     .catch(ui.failure)
 }
 

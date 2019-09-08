@@ -30,9 +30,9 @@ const showClip = (data) => {
     }
   })
 }
-const destroyClip = (data) => {
+const deleteClip = (data) => {
   return $.ajax({
-    url: config.apiUrl + '/clips/' + data.clip.id,
+    url: config.apiUrl + '/clips/' + data.id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -54,6 +54,6 @@ module.exports = {
   createClip,
   showClip,
   indexClips,
-  destroyClip,
+  deleteClip,
   updateClip
 }
