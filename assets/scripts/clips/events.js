@@ -27,7 +27,7 @@ const onDeleteClip = (event) => {
   const data = event.currentTarget.dataset
   // $(event.target).data('id')
   api.deleteClip(data)
-    // .then(ui.clearClips)
+    .then(ui.deleteClipSuccess)
     .then(() => onGetClips(event))
     .catch(ui.failure)
 }
@@ -46,18 +46,25 @@ const onViewClip = (event) => {
 
 const onUpdateClip = (event) => {
   event.preventDefault()
+  console.log("Update Form", event.target)
   const data = getFormFields(event.target)
 
   api.updateClip(data)
     .then(ui.updateClipSuccess)
+    .then(onGetClips)
     .catch(ui.failure)
 }
-
+// const onShowEditBtns = (event) => {
+//   const id = event.currentTarget.dataset.id
+//   console.log(id)
+//   ui.showEditButtons(id)
+// }
 const addHandlers = () => {
   $('.content').on('submit', '#save-clip', onSaveClip)
   $('.content').on('submit', '#update-clip', onUpdateClip)
-  $('.resume-clips').on('click', '.delete-btn', onDeleteClip)
-  $('.resume-clips').on('click', '.clip-item', onViewClip)
+  $('.content').on('click', '.delete-btn', onDeleteClip)
+  // $('.content').on('click', '.update-btn', onShowEditBtns)
+  $('.resume-clips').on('click', '.edit-btn', onViewClip)
   $('.new-clip-btn').on('click', ui.loadForm)
   // $('#getClipsButton').on('click', onGetClips)
 }
