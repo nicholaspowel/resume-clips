@@ -58,6 +58,7 @@ const addHandlers = () => {
   $('.content').on('submit', '#update-clip', onUpdateClip)
   $('.resume-clips').on('click', '.delete-btn', onDeleteClip)
   $('.resume-clips').on('click', '.clip-item', onViewClip)
+  $('.new-clip-btn').on('click', ui.loadForm)
   // $('#getClipsButton').on('click', onGetClips)
 }
 

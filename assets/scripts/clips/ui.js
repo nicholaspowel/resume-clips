@@ -3,7 +3,7 @@ const store = require('./../store.js')
 const showClipsTemplate = require('../templates/clip-listing.handlebars')
 // TODO make this more DRY. massively duplicating code to get MVP
 const clipsUpdateFormTemplate = require('../templates/clips-update-form.handlebars')
-
+const clipsFormTemplate = require('../templates/clips-form.handlebars')
 const createSuccess = (data) => {
   // create a better method of alerting success
   $('form').trigger('reset')
@@ -28,6 +28,10 @@ const viewClipSuccess = (data) => {
   $('#clipModal').modal('toggle')
   // should call a handlebars template to display the item
 }
+const loadForm = () => {
+  const clipsFormHtml = clipsFormTemplate()
+  $('.content').html(clipsFormHtml)
+}
 const updateClipSuccess = (data) => {
   console.log(data)
   $('form').trigger('reset')
@@ -38,5 +42,6 @@ module.exports = {
   showSuccess,
   getClipsSuccess,
   updateClipSuccess,
-  viewClipSuccess
+  viewClipSuccess,
+  loadForm
 }
