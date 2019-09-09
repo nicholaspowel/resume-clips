@@ -1,4 +1,5 @@
 'use strict'
+const store = require('./../store.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
 const getFormFields = require('./../../../lib/get-form-fields.js')
@@ -30,9 +31,22 @@ const onDeleteClip = (event) => {
     .catch(ui.failure)
 }
 
+const onViewClip = (event) => {
+  event.preventDefault()
+  const id = event.currentTarget.dataset.id
+  // console.log('clip id =', id)
+  // refactor so that an API call is not required
+  // const clip = store.data.clips.find(clip => clip.id === id)
+  // ui.viewClipSuccess(clip)
+  api.showClip(id)
+    .then(ui.viewClipSuccess)
+    .catch(ui.failure)
+}
+
 const addHandlers = () => {
   $('.content').on('submit', '#save-clip', onSaveBook)
   $('.resume-clips').on('click', '.delete-btn', onDeleteClip)
+  $('.resume-clips').on('click', '.clip-item', onViewClip)
   // $('#getClipsButton').on('click', onGetClips)
 }
 

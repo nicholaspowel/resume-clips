@@ -21,9 +21,9 @@ const indexClips = () => {
     }
   })
 }
-const showClip = (data) => {
+const showClip = (id) => {
   return $.ajax({
-    url: config.apiUrl + '/clips/' + data.clip.id, // TODO check this
+    url: config.apiUrl + '/clips/' + id, // TODO check this
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token

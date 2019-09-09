@@ -40,6 +40,7 @@ const changePasswordSuccess = () => {
 // Sign Out
 const signOutSuccess = () => {
   store.user = null
+  store.data = null
   $('#signed-in-user').text('')
   success('Signed Out!')
   $('#on-auth, .login, .on-auth').toggleClass('hidden')
