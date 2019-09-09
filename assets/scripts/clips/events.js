@@ -10,6 +10,7 @@ const onSaveClip = (event) => {
   // console.log('The new clip data is:', data, event)
   api.createClip(data)
     .then(ui.createSuccess)
+    .then(onGetClips)
     .catch(ui.failure)
 }
 const onGetClips = (event) => {

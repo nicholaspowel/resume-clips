@@ -2,14 +2,18 @@
   {{!-- {{log clip}} --}}
   <section class="clip-item" data-id="{{clip.id}}">
     <h6>Institute:</h6>
-    <h3>
+    <h2>
       {{limit clip.title 15}}
     </h2>
+    {{clip.category}}
+    {{clip.start_time}}
+    {{clip.end_time}}
+    {{clip.location}}
+    {{clip.position}}
     <h6>Description</h6>
     <p>
         {{clip.description}}
     </p>
-    {{> delete clip = clip}}
   </section>
 
 {{/each}}

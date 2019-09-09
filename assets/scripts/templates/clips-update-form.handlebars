@@ -1,0 +1,52 @@
+
+<form id="save-clip">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputTitle">Institute</label>
+      <input name="clip[title]" readonly value={{clip.title}} type="text" class="form-control" id="inputTitle" placeholder="ex: General Assembly" >
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPostition">Position</label>
+      <input name="clip[position]" readonly value={{clip.position}} type="text" class="form-control" id="inputPostition" placeholder="ex: Software Engineering Fellow">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCategory">Category</label>
+      <select multiple class="form-control" name="clip[category]" readonly value={{clip.category}} id="inputCategory">
+        <option>Education</option>
+        <option>Work</option>
+        <option>Experience</option>
+        <option>Projects</option>
+        <option>Other</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputLocation">Location</label>
+    <input name="clip[location]" readonly value={{clip.location}} type="text" class="form-control" id="inputLocation" placeholder="ex: Boston, MA or Paris, France">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputStartDate">Start Date</label>
+      <input name="clip[start_time]" readonly value="{{clip.start_time}}" type="date" class="form-control" id="inputStartDate">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputEndDate">End Date</label>
+      <input name="clip[end_time]" readonly value={{clip.end_time}} type="Date" class="form-control" id="inputEndDate">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputDescription">Description</label>
+    <textarea name="clip[description]" readonly value="{{clip.description}}" class="form-control" id="inputDescription" rows="5"></textarea>
+  </div>
+  <div class="form-row">
+    <label for="clipID">Clip ID</label>
+    <input class="hidden" type="text" name="clip[id]" readonly value="{{clip.id}}">
+  </div>
+<!-- refactor later to make this form useable to updating exisiting clips -->
+  <div class="clip-buttons">
+    <button type="submit" class="btn btn-primary update-btn">Edit</button>
+    <button type="submit" class="btn btn-primary save-btn">Save</button>
+  </div>
+</form>

@@ -1,9 +1,10 @@
 'use strict'
 const store = require('./../store.js')
 const showClipsTemplate = require('../templates/clip-listing.handlebars')
+// TODO make this more DRY. massively duplicating code to get MVP
+const clipsUpdateFormTemplate = require('../templates/clips-update-form.handlebars')
 
 const createSuccess = (data) => {
-  console.log('created successfully!', data)
   // create a better method of alerting success
   $('form').trigger('reset')
   $('#clipModal').modal('toggle')
@@ -21,6 +22,10 @@ const getClipsSuccess = (data) => {
 }
 const viewClipSuccess = (data) => {
   console.log(data)
+  // will be refactored to be more DRY later
+  const clipsUpdateFormHtml = clipsUpdateFormTemplate({ clip: data.clip })
+  $('.content').html(clipsUpdateFormHtml)
+  $('#clipModal').modal('toggle')
   // should call a handlebars template to display the item
 }
 const updateClipSuccess = (data) => {
