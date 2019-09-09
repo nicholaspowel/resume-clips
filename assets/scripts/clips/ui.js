@@ -38,8 +38,8 @@ const loadForm = () => {
   $('.content').html(clipsFormHtml)
 }
 const updateClipSuccess = (data) => {
-  console.log(data)
-  $('form').trigger('reset')
+  $('#clipModal').modal('toggle')
+  $('.content').empty()
 }
 const showEditButtons = (event) => {
 
