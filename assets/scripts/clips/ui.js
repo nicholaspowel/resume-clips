@@ -23,7 +23,8 @@ const viewClipSuccess = (data) => {
   console.log(data)
   // should call a handlebars template to display the item
 }
-const updateSuccess = (data) => {
+const updateClipSuccess = (data) => {
+  console.log(data)
   $('form').trigger('reset')
 }
 
@@ -31,6 +32,6 @@ module.exports = {
   createSuccess,
   showSuccess,
   getClipsSuccess,
-  updateSuccess,
+  updateClipSuccess,
   viewClipSuccess
 }

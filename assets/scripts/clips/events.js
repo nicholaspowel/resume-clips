@@ -4,7 +4,7 @@ const api = require('./api.js')
 const ui = require('./ui.js')
 const getFormFields = require('./../../../lib/get-form-fields.js')
 
-const onSaveBook = (event) => {
+const onSaveClip = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
   // console.log('The new clip data is:', data, event)
@@ -43,8 +43,18 @@ const onViewClip = (event) => {
     .catch(ui.failure)
 }
 
+const onUpdateClip = (event) => {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+
+  api.updateClip(data)
+    .then(ui.updateClipSuccess)
+    .catch(ui.failure)
+}
+
 const addHandlers = () => {
-  $('.content').on('submit', '#save-clip', onSaveBook)
+  $('.content').on('submit', '#save-clip', onSaveClip)
+  $('.content').on('submit', '#update-clip', onUpdateClip)
   $('.resume-clips').on('click', '.delete-btn', onDeleteClip)
   $('.resume-clips').on('click', '.clip-item', onViewClip)
   // $('#getClipsButton').on('click', onGetClips)
