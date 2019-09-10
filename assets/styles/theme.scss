@@ -42,7 +42,22 @@ main {
     }
   }
 }
-
+#newClip {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 0.5rem;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 4rem;
+  overflow: visible;
+  border: none;
+  cursor: pointer;
+  transition: all 200ms cubic-bezier(0.68, -0.55, 0.265, 2.55);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 1.9rem 1.9rem;
+  z-index: 210;
+  }
 // taken from Alerts project
 body {
   background: linear-gradient(to bottom right, midnightblue, $black);

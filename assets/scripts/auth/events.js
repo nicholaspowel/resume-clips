@@ -13,6 +13,7 @@ const onSignUp = (event) => {
   api.signUp(data)
     .then(ui.signUpSuccess)
     .then(() => {
+      // refactor to make code more dry
       const newData = {credentials: {}}
       newData.credentials.email = data.credentials.email
       newData.credentials.password = data.credentials.password
