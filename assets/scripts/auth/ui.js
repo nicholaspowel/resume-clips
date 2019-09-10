@@ -3,16 +3,14 @@ const store = require('./../store.js')
 const handleResponse = require('./../common/handleResponse')
 
 const signUpSuccess = (response) => {
-  const success = ['signUpSuccess', 'success']
-  const failure = ['signUpFailure', 'danger']
-  handleResponse(response, success, failure)
+  const action = ['signUp', 'danger', 'success']
+  handleResponse(response, action)
   $('form').trigger('reset')
 }
 // // Sign In
 const signInSuccess = (response) => {
-  const success = ['signInSuccess', 'success']
-  const failure = ['signInFailure', 'danger']
-  handleResponse(response, success, failure, () => {
+  const action = ['signIn', 'danger', 'success']
+  handleResponse(response, action, () => {
     store.user = response.user
     $('#signed-in-user').text('User:' + store.user.email)
     $('#on-auth, .login, .on-auth').toggleClass('hidden') // fix this to use invisible where appropriate
@@ -22,17 +20,15 @@ const signInSuccess = (response) => {
 
 // Change Password
 const changePasswordSuccess = (response) => {
-  const success = ['changePasswordSuccess', 'success']
-  const failure = ['changePasswordFailure', 'danger']
-  handleResponse(response, success, failure)
+  const action = ['changePassword', 'danger', 'success']
+  handleResponse(response, action)
   $('form').trigger('reset')
 }
 
 // Sign Out
 const signOutSuccess = (response) => {
-  const success = ['signOutSuccess', 'success']
-  const failure = ['signOutFailure', 'danger']
-  handleResponse(response, success, failure, () => {
+  const action = ['signOut', 'danger', 'info']
+  handleResponse(response, action, () => {
     store.user = null
     store.data = null
     $('#signed-in-user').text('')

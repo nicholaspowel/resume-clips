@@ -4,6 +4,7 @@ const showClipsTemplate = require('../templates/clip-listing.handlebars')
 // TODO make this more DRY. massively duplicating code to get MVP
 const clipsUpdateFormTemplate = require('../templates/clips-update-form.handlebars')
 const clipsFormTemplate = require('../templates/clips-form.handlebars')
+const handleResponse = require('./../common/handleResponse')
 // For using the same style of notifications as the auth ui
 // const showAlert = require('./../common/alerts')
 // const messages = require('./../common/messages')
