@@ -20,17 +20,23 @@ const handleResponse = require('./../common/handleResponse')
 //   category: ''
 // }
 
-const createSuccess = (data) => {
+const createSuccess = (response) => {
   // create a better method of alerting success
-  $('form').trigger('reset')
-  $('#clipModal').modal('toggle')
+  const action = ['createClip', 'danger', 'success']
+  handleResponse(response, action, () => {
+    $('form').trigger('reset')
+    $('#clipModal').modal('toggle')
+  })
 }
 
-const deleteClipSuccess = () => {
-  $('#clipModal').modal('toggle')
-  $('.content').empty()
+const deleteClipSuccess = (response) => {
+  const action = ['deleteClip', 'danger', 'success']
+  handleResponse(response, action, () => {
+    $('#clipModal').modal('toggle')
+    $('.content').empty()
+  })
 }
-const showSuccess = (data) => {
+const showSuccess = (response) => {
   $('form').trigger('reset')
 }
 
