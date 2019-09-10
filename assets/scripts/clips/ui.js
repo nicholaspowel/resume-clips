@@ -4,18 +4,21 @@ const showClipsTemplate = require('../templates/clip-listing.handlebars')
 // TODO make this more DRY. massively duplicating code to get MVP
 const clipsUpdateFormTemplate = require('../templates/clips-update-form.handlebars')
 const clipsFormTemplate = require('../templates/clips-form.handlebars')
-const showAlert = require('./../common/alerts')
-const messages = require('./../common/messages')
+// For using the same style of notifications as the auth ui
+// const showAlert = require('./../common/alerts')
+// const messages = require('./../common/messages')
+// const statusCode = /[4-5][0-9][0-9]/
 
-const newClip = {
-  description: '',
-  location: '',
-  start_time: null,
-  end_time: null,
-  title: '',
-  position: '',
-  category: ''
-}
+// const newClip = {
+//   description: '',
+//   location: '',
+//   start_time: null,
+//   end_time: null,
+//   title: '',
+//   position: '',
+//   category: ''
+// }
+
 const createSuccess = (data) => {
   // create a better method of alerting success
   $('form').trigger('reset')
