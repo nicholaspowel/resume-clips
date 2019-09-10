@@ -1,7 +1,10 @@
 main {
   @include make-container;
   @include make-container-max-widths;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
   section {
     @include make-col-ready;
     @include media-breakpoint-up(md) {
@@ -12,8 +15,9 @@ main {
     }
     background: $white;
     border: 1px solid;
+    border-radius: 4px;
     cursor: pointer;
-    margin: -1px;
+    // margin: -1px;
     outline: none;
     padding: 1rem;
 
@@ -42,10 +46,10 @@ main {
 // taken from Alerts project
 body {
   background: linear-gradient(to bottom right, midnightblue, $black);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 100vh;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // min-height: 100vh;
 }
 
 button {

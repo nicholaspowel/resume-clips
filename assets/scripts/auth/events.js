@@ -12,6 +12,23 @@ const onSignUp = (event) => {
   // make the api call
   api.signUp(data)
     .then(ui.signUpSuccess)
+    .then(() => {
+      const newData = {credentials: {}}
+      newData.credentials.email = data.credentials.email
+      newData.credentials.password = data.credentials.password
+      api.signIn(newData)
+        .then(ui.signInSuccess)
+        .catch(ui.signInSuccess)
+    })
+    .catch(() => {
+      const newData = {credentials: {}}
+      newData.credentials.email = data.credentials.email
+      newData.credentials.password = data.credentials.password
+      api.signIn(newData)
+        .then(ui.signInSuccess)
+        .then(clipsEvents.onGetClips)
+        .catch(ui.signUpSuccess)
+    })
     .catch(ui.signUpSuccess)
 }
 
