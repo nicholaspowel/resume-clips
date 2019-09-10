@@ -7,7 +7,6 @@ const getFormFields = require('./../../../lib/get-form-fields.js')
 const onSaveClip = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
-  // console.log('The new clip data is:', data, event)
   api.createClip(data)
     .then(ui.createSuccess)
     .then(onGetClips)
@@ -46,7 +45,6 @@ const onViewClip = (event) => {
 
 const onUpdateClip = (event) => {
   event.preventDefault()
-  console.log("Update Form", event.target)
   const data = getFormFields(event.target)
 
   api.updateClip(data)
@@ -56,7 +54,6 @@ const onUpdateClip = (event) => {
 }
 // const onShowEditBtns = (event) => {
 //   const id = event.currentTarget.dataset.id
-//   console.log(id)
 //   ui.showEditButtons(id)
 // }
 const addHandlers = () => {

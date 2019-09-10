@@ -12,7 +12,7 @@ const onSignUp = (event) => {
   // make the api call
   api.signUp(data)
     .then(ui.signUpSuccess)
-    .catch(ui.failure)
+    .catch(ui.signUpSuccess)
 }
 
 const onSignIn = (event) => {
@@ -21,7 +21,7 @@ const onSignIn = (event) => {
   api.signIn(data)
     .then(ui.signInSuccess)
     .then(clipsEvents.onGetClips) // Loads up the users clips so they are visible immediately
-    .catch(ui.failure)
+    .catch(ui.signInSuccess)
 }
 
 // CHANGE PASSWORD
@@ -32,7 +32,7 @@ const onChangePassword = (event) => {
 
   api.changePassword(data)
     .then(ui.changePasswordSuccess)
-    .catch(ui.failure)
+    .catch(ui.changePasswordSuccess)
 }
 
 // SIGN OUT
@@ -41,7 +41,7 @@ const onSignOut = (event) => {
   event.preventDefault()
   api.signOut()
     .then(ui.signOutSuccess)
-    .catch(ui.failure)
+    .catch(ui.signOutSuccess)
 }
 
 const addHandlers = () => {

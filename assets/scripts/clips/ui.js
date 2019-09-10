@@ -4,7 +4,18 @@ const showClipsTemplate = require('../templates/clip-listing.handlebars')
 // TODO make this more DRY. massively duplicating code to get MVP
 const clipsUpdateFormTemplate = require('../templates/clips-update-form.handlebars')
 const clipsFormTemplate = require('../templates/clips-form.handlebars')
+const showAlert = require('./../common/alerts')
+const messages = require('./../common/messages')
 
+const newClip = {
+  description: '',
+  location: '',
+  start_time: null,
+  end_time: null,
+  title: '',
+  position: '',
+  category: ''
+}
 const createSuccess = (data) => {
   // create a better method of alerting success
   $('form').trigger('reset')
@@ -26,7 +37,6 @@ const getClipsSuccess = (data) => {
   $('form').trigger('reset')
 }
 const viewClipSuccess = (data) => {
-  console.log(data)
   // will be refactored to be more DRY later
   const clipsUpdateFormHtml = clipsUpdateFormTemplate({ clip: data.clip })
   $('.content').html(clipsUpdateFormHtml)
@@ -41,12 +51,8 @@ const updateClipSuccess = (data) => {
   $('#clipModal').modal('toggle')
   $('.content').empty()
 }
-const showEditButtons = (event) => {
-
-}
 
 module.exports = {
-  showEditButtons,
   createSuccess,
   showSuccess,
   deleteClipSuccess,
