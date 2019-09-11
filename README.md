@@ -6,7 +6,7 @@
 
   [The deployed frontend of the app](https://nicholaspowel.github.io/resume-clips-client/)
 
-  [The repo for the backend API]
+  [The repo for the backend API](https://github.com/nicholaspowel/resume-clips-rails-api)
 
   [The deployed backend of the app](https://resume-clips-rails-api.herokuapp.com/)
 
