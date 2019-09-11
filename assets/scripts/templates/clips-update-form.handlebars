@@ -3,11 +3,11 @@
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputTitle">Institute</label>
-      <input name="clip[title]" value="{{clip.title}}" type="text" class="form-control" id="inputTitle" placeholder="ex: General Assembly" >
+      <input name="clip[title]" value="{{hasVal clip.title}}" type="text" class="form-control" id="inputTitle" placeholder="ex: General Assembly" >
     </div>
     <div class="form-group col-md-6">
       <label for="inputPostition">Position</label>
-      <input name="clip[position]" value="{{clip.position}}" type="text" class="form-control" id="inputPostition" placeholder="ex: Software Engineering Fellow">
+      <input name="clip[position]" value="{{hasVal clip.position}}" type="text" class="form-control" id="inputPostition" placeholder="ex: Software Engineering Fellow">
     </div>
   </div>
   <div class="form-row">
@@ -25,24 +25,24 @@
   </div>
   <div class="form-group">
     <label for="inputLocation">Location</label>
-    <input name="clip[location]" value={{clip.location}} type="text" class="form-control" id="inputLocation" placeholder="ex: Boston, MA or Paris, France">
+    <input name="clip[location]" value="{{hasVal clip.location}}" type="text" class="form-control" id="inputLocation" placeholder="ex: Boston, MA or Paris, France">
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputStartDate">Start Date</label>
-      <input name="clip[start_time]" value="{{hasDate clip.start_time}}" type="date" class="form-control" id="inputStartDate">
+      <input name="clip[start_time]" value="{{hasVal clip.start_time}}" type="date" class="form-control" id="inputStartDate">
     </div>
     <div class="form-group col-md-6">
       <label for="inputEndDate">End Date</label>
       <!-- refactor to handle empty Date data -->
-      <input name="clip[end_time]" value={{hasDate clip.end_time}} type="Date" class="form-control" id="inputEndDate">
+      <input name="clip[end_time]" value="{{hasVal clip.end_time}}" type="Date" class="form-control" id="inputEndDate">
     </div>
   </div>
   <div class="form-group">
     <label for="inputDescription">Description</label>
     <textarea name="clip[description]" class="form-control" id="inputDescription" rows="5">{{clip.description}}</textarea>
   </div>
-  <div class="form-row">
+  <div class="form-row hidden">
     <label for="clipID" class="hidden">Clip ID</label>
     <input class="hidden" type="text" name="clip[id]" readonly value="{{clip.id}}">
   </div>
