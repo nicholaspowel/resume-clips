@@ -42,6 +42,7 @@ const showSuccess = (response) => {
 
 const getClipsSuccess = (data) => {
   store.data = data
+  $('.resume-clips').empty()
   const showClipsHtml = showClipsTemplate({ clips: data.clips })
   $('.resume-clips').html(showClipsHtml)
   $('form').trigger('reset')

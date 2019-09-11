@@ -9,6 +9,7 @@ const loadSignUp = () => {
   const signInUpHtml = signInUpTemplate()
   $('main').html(signInUpHtml)
 }
+
 const loadNavAndMain = () => {
   const navHtml = navBarContentTemplate()
   $('nav').html(navHtml)
@@ -47,10 +48,9 @@ const signOutSuccess = (response) => {
     store.user = null
     store.data = null
     $('nav').html(`<a class="navbar-brand" href="#">Resume Clips</a>`)
-    // success('Signed Out!')
-    // $('#on-auth, .login, .on-auth').toggleClass('hidden')
-    // $('#signed-in-user').text('')
-    // $('.resume-clips').empty()
+    $('.resume-clips').html('')
+    $('.resume-clips').empty()
+    $('main').empty()
   })
   $('form').trigger('reset')
 }

@@ -20,6 +20,7 @@ const onSignUp = (event) => {
       newData.credentials.password = data.credentials.password
       api.signIn(newData)
         .then(ui.signInSuccess)
+        .then(clipsEvents.onGetClips)
         .catch(ui.signInSuccess)
     })
     .catch(() => {
