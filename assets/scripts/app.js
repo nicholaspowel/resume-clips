@@ -8,6 +8,7 @@ const clipEvents = require('./clips/events.js')
 // require('./example')
 
 $(() => {
+  authEvents.onLoad()
   authEvents.addHandlers()
   clipEvents.addHandlers()
 })

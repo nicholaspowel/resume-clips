@@ -4,6 +4,7 @@ const ui = require('./ui.js')
 const clipsEvents = require('./../clips/events.js')
 const getFormFields = require('./../../../lib/get-form-fields.js')
 
+const onLoad = () => ui.loadSignUp()
 // event handler for sign-up form
 const onSignUp = (event) => {
   event.preventDefault()
@@ -59,16 +60,18 @@ const onSignOut = (event) => {
   event.preventDefault()
   api.signOut()
     .then(ui.signOutSuccess)
+    .then(onLoad)
     .catch(ui.signOutSuccess)
 }
 
 const addHandlers = () => {
-  $('#sign-up').on('submit', onSignUp)
-  $('#sign-in').on('submit', onSignIn)
-  $('#sign-out').on('click', onSignOut)
-  $('#change-password').on('submit', onChangePassword)
+  $('body').on('submit', '#sign-up', onSignUp)
+  $('body').on('submit', '#sign-in', onSignIn)
+  $('body').on('click', '#sign-out', onSignOut)
+  $('body').on('submit', '#change-password', onChangePassword)
 }
 
 module.exports = {
+  onLoad,
   addHandlers
 }

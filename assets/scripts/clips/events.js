@@ -12,6 +12,7 @@ const onSaveClip = (event) => {
     .then(onGetClips)
     .catch(ui.failure)
 }
+
 const onGetClips = (event) => {
   // if (event) {
   //   event.preventDefault()
@@ -53,12 +54,12 @@ const onUpdateClip = (event) => {
     .catch(ui.failure)
 }
 const addHandlers = () => {
-  $('.content').on('submit', '#save-clip', onSaveClip)
-  $('.content').on('submit', '#update-clip', onUpdateClip)
-  $('.content').on('click', '.delete-btn', onDeleteClip)
+  $('body').on('submit', '#save-clip', onSaveClip)
+  $('body').on('submit', '#update-clip', onUpdateClip)
+  $('body').on('click', '.delete-btn', onDeleteClip)
 
-  $('.resume-clips').on('click', '.edit-btn', onViewClip)
-  $('.new-clip-btn').on('click', ui.loadForm)
+  $('body').on('click', '.edit-btn', onViewClip)
+  $('body').on('click', '.new-clip-btn', ui.loadForm)
   // $('#getClipsButton').on('click', onGetClips)
 }
 
