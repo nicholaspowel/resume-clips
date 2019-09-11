@@ -62,6 +62,7 @@ main {
 // taken from Alerts project
 body {
   background: linear-gradient(to bottom right, midnightblue, $black);
+  overflow-wrap: break-word;
   // display: flex;
   // flex-direction: column;
   // justify-content: center;

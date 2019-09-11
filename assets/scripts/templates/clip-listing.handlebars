@@ -1,16 +1,16 @@
 {{#each clips as |clip|}}
   {{!-- {{log clip}} --}}
   <section class="clip-item" data-id="{{clip.id}}">
-    <h6>{{clip.category}}</h6>
+    <h6>{{limit clip.category 30}}</h6>
     <h4>
-      {{clip.title}}
+      {{limit clip.title 30}}
     </h4>
-    <h6>{{clip.location}}</h6>
-    <h5>{{clip.position}}</h5>
+    <h6>{{limit clip.location 30}}</h6>
+    <h5>{{limit clip.position 30}}</h5>
     <p>{{clip.start_time}} to {{clip.end_time}}</p>
     <h6>Description</h6>
     <p class="clip-desc">
-        {{clip.description}}
+        {{limit clip.description 256}}
     </p>
     {{> ./partials/edit clip = clip}}
   </section>
