@@ -35,7 +35,6 @@ const onDeleteClip = (event) => {
 const onViewClip = (event) => {
   event.preventDefault()
   const id = event.currentTarget.dataset.id
-  // console.log('clip id =', id)
   // refactor so that an API call is not required
   // const clip = store.data.clips.find(clip => clip.id === id)
   // ui.viewClipSuccess(clip)
