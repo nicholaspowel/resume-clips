@@ -38,7 +38,7 @@ As a user:
 * I expect to be able to sign out
 
 ### Wireframes
-![image](https://drive.google.com/file/d/10E42GiRzCYXfrn9hROw-xQbMx5x4agXb/view?usp=sharing)
+![image](./public/wireframes.jpg)
 
 ## Technologies Used
 * HTML
