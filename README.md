@@ -11,12 +11,9 @@
   [The deployed backend of the app](https://resume-clips-rails-api.herokuapp.com/)
 
 ## Features
-#### Create an account, or sign into an existing one
-
-#### Create new resume clips
-
-#### Edit existing clips or delete them
-
+* Create an account, or sign into an existing one
+* Create new resume clips
+* Edit existing clips or delete them
 
 ## Features in the works
 * Organize resume clips into collections
@@ -27,23 +24,21 @@
 
 ## Planning
 
+I started by creating user stories and wireframes. With the rough outline from these and a functioning Rails API I was able to systematically go through creating and testing each feature as I would expect to encounter them as a user. Although I kept some eye to code modularity as I went, significant refactoring was required to use Handlebars and implement the Update feature.
 
 ### User Stories
 As a user:
 * I expect to be able to login
 * I expect to be able to logout
 * I expect to be able to change my password
-* I expect to be able to acess my clips
-* I expect to be able to modify my resume clips
+* I expect to be able to access my clips
 * I expect to be able to create new clips
+* I expect to be able to modify my resume clips
 * I expect to be able to delete clips
-* I expect to filter clips by category
+* I expect to be able to sign out
 
 ### Wireframes
-https://drive.google.com/file/d/10E42GiRzCYXfrn9hROw-xQbMx5x4agXb/view?usp=sharing
-
-## Challenges + Reflections
-
+![image](https://drive.google.com/file/d/10E42GiRzCYXfrn9hROw-xQbMx5x4agXb/view?usp=sharing)
 
 ## Technologies Used
 * HTML
@@ -54,3 +49,6 @@ https://drive.google.com/file/d/10E42GiRzCYXfrn9hROw-xQbMx5x4agXb/view?usp=shari
 * JQuery
 * Hnadlebars.js
 * Ajax
+
+* * *
+*A special shoutout to Jennifer Meade for styling, code, and UX inspiration (and a bit of code for each)*
